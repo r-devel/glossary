@@ -4,3 +4,6 @@
 ^\.github$
 ^\.pre-commit-config\.yaml$
 ^glossary\.Rproj$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
