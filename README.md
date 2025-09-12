@@ -1,11 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Proposal
-
-This package is based on the proposal:
-<https://github.com/SaranjeetKaur/isc_proposal_translations>
-
 # glossary
 
 <!-- badges: start -->
@@ -13,7 +8,14 @@ This package is based on the proposal:
 [![R-CMD-check](https://github.com/r-devel/glossary/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/r-devel/glossary/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of glossary is to manage a glossary for R translation projects.
+The goal of this package is to manage a glossary for R translation
+projects. The idea is based on [a
+proposal](https://github.com/SaranjeetKaur/isc_proposal_translations)
+created by [Saranjeet Kaur Bhogal
+(@SaranjeetKaur)](https://github.com/SaranjeetKaur/). The project was
+launched during the [R Dev Day @ RSE
+Con25](https://warwick.ac.uk/fac/sci/statistics/news/r-dev-day-rsecon25).
+This is repo is currently Work in Progress.
 
 ## Installation
 
