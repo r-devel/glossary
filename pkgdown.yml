@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.3
 pkgdown_sha: ~
 articles: {}
-last_built: 2025-09-12T09:54Z
+last_built: 2025-09-12T10:07Z
 urls:
   reference: http://contributor.r-project.org/glossary/reference
   article: http://contributor.r-project.org/glossary/articles
