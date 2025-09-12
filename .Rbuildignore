@@ -1,8 +1,9 @@
-^glossary\.Rproj$
-^\.Rproj\.user$
-^README\.Rmd$
-^\.github$
 ^LICENSE\.md$
+^README\.Rmd$
+^\.Rproj\.user$
+^\.github$
+^\.pre-commit-config\.yaml$
+^glossary\.Rproj$
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
