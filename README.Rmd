@@ -21,6 +21,16 @@ You can install the development version of glossary from [GitHub](https://github
 pak::pak("r-devel/glossary")
 ```
 
+## using pre commit without repo permissions
+
+- fork the repo and clone it locally
+- install.packages("devtools")
+- In a separate terminal (not R studio terminal), run `pip3 install pre-commit --user` (on windows)
+- install.packages("precommit")
+- On R studio, run `precommit::use_precommit()` (only once in a repo)
+
+
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
