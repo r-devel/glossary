@@ -21,22 +21,24 @@ You can install the development version of glossary from [GitHub](https://github
 pak::pak("r-devel/glossary")
 ```
 
-## With `Write` permissions:
+## Using precommit
 
-Steps to add pre-commit:
+This repository uses precommit. To install and run the same, follow the steps below:
 
-1. Do the following in the Terminal application of your machine. Do not do this in RStudio Terminal:
-    1. For windows `pip3 install pre-commit --user`
-    2. For mac `brew install pre-commit` 
-2. Clone the repo https://github.com/r-devel/glossary to a local folder.  
-3. Go to RStudio Console and type 
-```{r}
+- In an external terminal run `pip3 install pre-commit --user` (for Windows) or `brew install pre-commit` (for macOS)
+- Based on the level of permissions you have, either directly clone this repository or clone a fork of this repository to a local directory.
+
+``` zsh
+git clone https://github.com/r-devel/glossary (or git clone https://github.com/USER_NAME/glossary, if it is your fork of the repo)
+cd glossary
+- Install the {devtools} and {precommit} package 
+```{r, eval=F, echo=T}
 install.packages("devtools")
 install.packages("precommit")
-precommit::use_precommit()
 ```
 
-This will open pre-commit interface in browser. Sign into it with GitHub.
+- Run `precommit::use_precommit()`
+
 
 ## Example
 
