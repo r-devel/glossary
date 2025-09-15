@@ -27,9 +27,9 @@ You can install the development version of glossary from
 pak::pak("r-devel/glossary")
 ```
 
-## Using precommit when contributing
+## Using pre-commit when contributing
 
-This repository uses precommit. To install and run the same, follow the
+This repository uses pre-commit. To install and run the same, follow the
 steps below:
 
 - In an external terminal run `pip3 install pre-commit --user` (for
@@ -50,6 +50,10 @@ install.packages("precommit")
 ```
 
 - Run `precommit::use_precommit()` in the console.
+- Once precommit is installed, each time you run `git commit`, the
+  precommit hooks will run automatically. If any of the checks fail, you
+  will need to fix the issues before you can successfully commit your
+  changes.
 
 ## Example
 
@@ -62,57 +66,71 @@ library(glossary)
 
 ## Contributors
 
-
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
 <!-- prettier-ignore-start -->
+
 <!-- markdownlint-disable -->
 
-All contributions to this project are gratefully acknowledged using the [`allcontributors` package](https://github.com/ropensci/allcontributors) following the [all-contributors](https://allcontributors.org) specification. Contributions of any kind are welcome!
+All contributions to this project are gratefully acknowledged using the
+[`allcontributors` package](https://github.com/ropensci/allcontributors)
+following the [all-contributors](https://allcontributors.org)
+specification. Contributions of any kind are welcome!
 
 ### Code
 
 <table>
 
 <tr>
+
 <td align="center">
+
 <a href="https://github.com/SaranjeetKaur">
 <img src="https://avatars.githubusercontent.com/u/28556616?v=4" width="100px;" alt=""/>
 </a><br>
 <a href="https://github.com/r-devel/glossary/commits?author=SaranjeetKaur">SaranjeetKaur</a>
 </td>
+
 <td align="center">
+
 <a href="https://github.com/rivaquiroga">
 <img src="https://avatars.githubusercontent.com/u/31421616?v=4" width="100px;" alt=""/>
 </a><br>
 <a href="https://github.com/r-devel/glossary/commits?author=rivaquiroga">rivaquiroga</a>
 </td>
+
 <td align="center">
+
 <a href="https://github.com/sndaba">
 <img src="https://avatars.githubusercontent.com/u/53818579?v=4" width="100px;" alt=""/>
 </a><br>
 <a href="https://github.com/r-devel/glossary/commits?author=sndaba">sndaba</a>
 </td>
+
 </tr>
 
 </table>
-
 
 ### Issues
 
 <table>
 
 <tr>
+
 <td align="center">
+
 <a href="https://github.com/jyoti-bhogal">
 <img src="https://avatars.githubusercontent.com/u/68017009?u=bd7a5480542d1a16ca303ca5724f2d73a30ccf47&v=4" width="100px;" alt=""/>
 </a><br>
 <a href="https://github.com/r-devel/glossary/issues?q=is%3Aissue+author%3Ajyoti-bhogal">jyoti-bhogal</a>
 </td>
+
 </tr>
 
 </table>
 
 <!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
 
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->

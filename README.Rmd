@@ -21,9 +21,9 @@ You can install the development version of glossary from [GitHub](https://github
 pak::pak("r-devel/glossary")
 ```
 
-## Using precommit when contributing
+## Using pre-commit when contributing
 
-This repository uses precommit. To install and run the same, follow the steps below:
+This repository uses pre-commit. To install and run the same, follow the steps below:
 
 - In an external terminal run `pip3 install pre-commit --user` (for Windows) or `brew install pre-commit` (for macOS).
 - Based on the level of permissions you have, either directly clone this repository or clone a fork of this repository to a local directory.
