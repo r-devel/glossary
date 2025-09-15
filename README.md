@@ -27,67 +27,29 @@ You can install the development version of glossary from
 pak::pak("r-devel/glossary")
 ```
 
-## With `Write` permissions:
+## Using precommit when contributing
 
-Steps to add pre-commit:
+This repository uses precommit. To install and run the same, follow the
+steps below:
 
-1.  Do the following in the Terminal application of your machine. Do not
-    do this in RStudio Terminal:
-    1.  For windows `pip3 install pre-commit --user`
-    2.  For mac `brew install pre-commit`
-2.  Clone the repo <https://github.com/r-devel/glossary> to a local
-    folder.  
-3.  Go to RStudio Console and type
+- In an external terminal run `pip3 install pre-commit --user` (for
+  Windows) or `brew install pre-commit` (for macOS).
+- Based on the level of permissions you have, either directly clone this
+  repository or clone a fork of this repository to a local directory.
+
+``` zsh
+git clone https://github.com/r-devel/glossary (or git clone https://github.com/USER_NAME/glossary, if it is your fork of the repo)
+cd glossary
+```
+
+- Install the {devtools} and {precommit} package.
 
 ``` r
 install.packages("devtools")
-```
-
-    ## Installing package into '/private/var/folders/7k/kpyh33yd4mlbp_p2j8m4810m0000gn/T/Rtmp8NpaOv/temp_libpath11ffa4c8e05e2'
-    ## (as 'lib' is unspecified)
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/7k/kpyh33yd4mlbp_p2j8m4810m0000gn/T//Rtmpvoicpp/downloaded_packages
-
-``` r
 install.packages("precommit")
 ```
 
-    ## Installing package into '/private/var/folders/7k/kpyh33yd4mlbp_p2j8m4810m0000gn/T/Rtmp8NpaOv/temp_libpath11ffa4c8e05e2'
-    ## (as 'lib' is unspecified)
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/7k/kpyh33yd4mlbp_p2j8m4810m0000gn/T//Rtmpvoicpp/downloaded_packages
-
-``` r
-precommit::use_precommit()
-```
-
-    ## ℹ Using local config from /private/var/folders/7k/kpyh33yd4mlbp_p2j8m4810m0000gn/T/Rtmp8NpaOv/temp_libpath11ffa4c8e05e2/precommit/pre-commit-config-pkg.yaml.
-
-    ## ℹ There is already a pre-commit configuration file in /Users/jyotibhogal/Documents/GitHub/glossary. Use `force = TRUE` to replace .pre-commit-config.yaml.
-
-    ## • Edit .precommit-config.yaml to (de)activate the hooks you want to use.
-
-    ## • All available hooks: https://pre-commit.com/hooks.html
-
-    ## • R specific hooks: https://github.com/lorenzwalthert/precommit
-
-    ## ✔ Ran `pre-commit autoupdate ()` to get the latest version of the hooks.
-
-    ## ℹ Installing hooks in non-blocking background process. If you experience problems or prefer a blocking process, use `options("precommit.block_install_hooks" = TRUE)`.
-
-    ## • Sign in with GitHub to authenticate <https://pre-commit.ci> and then come
-    ## back to complete the set-up process.
-
-    ## • It seems like you are using the roxygenize hook. This requires further edits
-    ## in your `.pre-commit-config.yaml`, please run
-    ## `precommit::snippet_generate('additional-deps-roxygenize')` to proceed.
-
-This will open pre-commit interface in browser. Sign into it with
-GitHub.
+- Run `precommit::use_precommit()` in the console.
 
 ## Example
 

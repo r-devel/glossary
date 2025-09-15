@@ -21,7 +21,7 @@ You can install the development version of glossary from [GitHub](https://github
 pak::pak("r-devel/glossary")
 ```
 
-## Using precommit
+## Using precommit when contributing
 
 This repository uses precommit. To install and run the same, follow the steps below:
 
