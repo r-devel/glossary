@@ -23,7 +23,7 @@ pak::pak("r-devel/glossary")
 
 ## Using pre-commit when contributing
 
-This repository uses pre-commit. To install and run the same, follow the steps below:
+This repository uses pre-commit. To install and run the it, follow the steps below:
 
 - In an external terminal run `pip3 install pre-commit --user` (for Windows) or `brew install pre-commit` (for macOS).
 - Based on the level of permissions you have, either directly clone this repository or clone a fork of this repository to a local directory.
@@ -108,4 +108,3 @@ All contributions to this project are gratefully acknowledged using the [`allcon
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-
