@@ -1,11 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Proposal
-
-This package is based on the proposal:
-<https://github.com/SaranjeetKaur/isc_proposal_translations>
-
 # glossary
 
 <!-- badges: start -->
@@ -13,7 +8,14 @@ This package is based on the proposal:
 [![R-CMD-check](https://github.com/r-devel/glossary/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/r-devel/glossary/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of glossary is to manage a glossary for R translation projects.
+The goal of this package is to manage a glossary for R translation
+projects. The idea is based on [a
+proposal](https://github.com/SaranjeetKaur/isc_proposal_translations)
+created by [Saranjeet Kaur Bhogal
+(@SaranjeetKaur)](https://github.com/SaranjeetKaur/). The project was
+launched during the [R Dev Day @ RSE
+Con25](https://warwick.ac.uk/fac/sci/statistics/news/r-dev-day-rsecon25).
+This is repo is currently Work in Progress.
 
 ## Installation
 
@@ -25,6 +27,34 @@ You can install the development version of glossary from
 pak::pak("r-devel/glossary")
 ```
 
+## Using pre-commit when contributing
+
+This repository uses pre-commit. To install and run the it, follow the
+steps below:
+
+- In an external terminal run `pip3 install pre-commit --user` (for
+  Windows) or `brew install pre-commit` (for macOS).
+- Based on the level of permissions you have, either directly clone this
+  repository or clone a fork of this repository to a local directory.
+
+``` zsh
+git clone https://github.com/r-devel/glossary (or git clone https://github.com/USER_NAME/glossary, if it is your fork of the repo)
+cd glossary
+```
+
+- Install the {devtools} and {precommit} package.
+
+``` r
+install.packages("devtools")
+install.packages("precommit")
+```
+
+- Run `precommit::use_precommit()` in the console.
+- Once precommit is installed, each time you run `git commit`, the
+  precommit hooks will run automatically. If any of the checks fail, you
+  will need to fix the issues before you can successfully commit your
+  changes.
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -33,3 +63,74 @@ This is a basic example which shows you how to solve a common problem:
 library(glossary)
 ## basic example code
 ```
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
+<!-- prettier-ignore-start -->
+
+<!-- markdownlint-disable -->
+
+All contributions to this project are gratefully acknowledged using the
+[`allcontributors` package](https://github.com/ropensci/allcontributors)
+following the [all-contributors](https://allcontributors.org)
+specification. Contributions of any kind are welcome!
+
+### Code
+
+<table>
+
+<tr>
+
+<td align="center">
+
+<a href="https://github.com/SaranjeetKaur">
+<img src="https://avatars.githubusercontent.com/u/28556616?v=4" width="100px;" alt=""/>
+</a><br>
+<a href="https://github.com/r-devel/glossary/commits?author=SaranjeetKaur">SaranjeetKaur</a>
+</td>
+
+<td align="center">
+
+<a href="https://github.com/rivaquiroga">
+<img src="https://avatars.githubusercontent.com/u/31421616?v=4" width="100px;" alt=""/>
+</a><br>
+<a href="https://github.com/r-devel/glossary/commits?author=rivaquiroga">rivaquiroga</a>
+</td>
+
+<td align="center">
+
+<a href="https://github.com/sndaba">
+<img src="https://avatars.githubusercontent.com/u/53818579?v=4" width="100px;" alt=""/>
+</a><br>
+<a href="https://github.com/r-devel/glossary/commits?author=sndaba">sndaba</a>
+</td>
+
+</tr>
+
+</table>
+
+### Issues
+
+<table>
+
+<tr>
+
+<td align="center">
+
+<a href="https://github.com/jyoti-bhogal">
+<img src="https://avatars.githubusercontent.com/u/68017009?u=bd7a5480542d1a16ca303ca5724f2d73a30ccf47&v=4" width="100px;" alt=""/>
+</a><br>
+<a href="https://github.com/r-devel/glossary/issues?q=is%3Aissue+author%3Ajyoti-bhogal">jyoti-bhogal</a>
+</td>
+
+</tr>
+
+</table>
+
+<!-- markdownlint-enable -->
+
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
