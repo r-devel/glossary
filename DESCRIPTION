@@ -11,4 +11,10 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 URL: http://contributor.r-project.org/glossary/
 Imports: 
-    allcontributors
+    allcontributors,
+    usethis (>= 3.2.1)
+Depends: 
+    R (>= 3.5)
+LazyData: true
+Remotes:  
+    r-lib/usethis
