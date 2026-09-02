@@ -1,28 +1,140 @@
-## code to prepare `combine` dataset goes here
+# data-raw/combine_glossaries.R
 
-usethis::use_data(combine, overwrite = TRUE)
+# ---------------------------------------------------------
+# URLs
+# ---------------------------------------------------------
 
-# read csv file from ropensci glossary
+ropensci_url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "ropensci-review-tools/glossary/master/glossary.csv"
+)
 
-ropensci_url <- "https://raw.githubusercontent.com/ropensci-review-tools/
-  glossary/master/glossary.csv"
+weblate_url <- paste0(
+  "https://translate.rx.studio/download/",
+  "r-project/glossary/en/?format=csv"
+)
 
-ropensci_glossary <- read.csv(ropensci_url, stringsAsFactors = FALSE)
 
-# access glossary from weblate URL (for English terms)
+# ---------------------------------------------------------
+# Retrieval date
+# ---------------------------------------------------------
 
-weblate_url <- "https://translate.rx.studio/download/r-project/glossary/
-  en/?format=csv"
+retrieved_at <- Sys.Date()
 
-temp <- tempfile(fileext = ".csv")
-download.file(weblate_url, temp, mode = "wb")
-weblate_glossary <- read.csv(temp, stringsAsFactors = FALSE)
 
-# combine the "english" column from ropensci_glossary with
-# the "source" column from weblate_glossary keeping only
-# the unique terms
+# ---------------------------------------------------------
+# rOpenSci glossary
+# ---------------------------------------------------------
 
-combine <- unique(c(ropensci_glossary$english, weblate_glossary$source))
+ropensci <- readr::read_csv(
+  ropensci_url,
+  show_col_types = FALSE
+) |>
+  janitor::clean_names() |>
+  dplyr::mutate(
+    source = "rOpenSci",
+    source_url = ropensci_url,
+    retrieved_at = retrieved_at,
 
-# save combine dataset
-usethis::use_data(combine, overwrite = TRUE)
+    location = NA_character_,
+    id = NA_character_,
+    fuzzy = NA,
+    context = NA_character_,
+    translator_comments = NA_character_,
+    developer_comments = NA_character_
+  ) |>
+  dplyr::select(
+    english,
+    spanish,
+    synonym,
+    observation,
+    source,
+    source_url,
+    retrieved_at,
+    location,
+    id,
+    fuzzy,
+    context,
+    translator_comments,
+    developer_comments
+  )
+
+
+# ---------------------------------------------------------
+# Weblate glossary
+# ---------------------------------------------------------
+
+weblate <- readr::read_csv(
+  weblate_url,
+  show_col_types = FALSE
+) |>
+  janitor::clean_names() |>
+  dplyr::mutate(
+    english = source,
+    spanish = target,
+
+    synonym = NA_character_,
+
+    observation = dplyr::coalesce(
+      translator_comments,
+      developer_comments
+    ),
+
+    source = "Weblate",
+    source_url = weblate_url,
+    retrieved_at = retrieved_at
+  ) |>
+  dplyr::select(
+    english,
+    spanish,
+    synonym,
+    observation,
+    source,
+    source_url,
+    retrieved_at,
+    location,
+    id,
+    fuzzy,
+    context,
+    translator_comments,
+    developer_comments
+  )
+
+# ---------------------------------------------------------
+# Combine glossaries
+# ---------------------------------------------------------
+
+combine <- dplyr::bind_rows(
+  ropensci,
+  weblate
+) |>
+  dplyr::mutate(
+    dplyr::across(
+      c(
+        english,
+        spanish,
+        synonym,
+        observation,
+        source,
+        source_url,
+        location,
+        id,
+        context,
+        translator_comments,
+        developer_comments
+      ),
+      as.character
+    ),
+    fuzzy = as.logical(fuzzy)
+  ) |>
+  dplyr::distinct()
+
+
+# ---------------------------------------------------------
+# Save as package data
+# ---------------------------------------------------------
+
+usethis::use_data(
+  combine,
+  overwrite = TRUE
+)

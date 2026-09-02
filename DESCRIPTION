@@ -16,5 +16,9 @@ Imports:
 Depends: 
     R (>= 3.5)
 LazyData: true
-Remotes:  
+Remotes: 
     r-lib/usethis
+Suggests: 
+    dplyr,
+    janitor,
+    readr
