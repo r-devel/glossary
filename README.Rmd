@@ -57,6 +57,7 @@ updated_glossary <- update_glossary(
     updated_via = "GitHub",
     weblate = "include"
     )
+updated_glossary
 ```
 
 ## Contributors
