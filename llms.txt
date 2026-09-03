@@ -56,7 +56,14 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 
 library(glossary)
-## basic example code
+current_glossary <- data.frame()
+updated_glossary <- update_glossary(
+    glossary = current_glossary,
+    english = "data frame",
+    spanish = "marco de datos",
+    updated_via = "GitHub",
+    weblate = "include"
+    )
 ```
 
 ## Contributors
@@ -84,4 +91,6 @@ specification. Contributions of any kind are welcome!
   : Get the rOpenSci glossary
 - [`get_weblate_glossary()`](http://contributor.r-project.org/glossary/reference/get_weblate_glossary.md)
   : Get the Weblate glossary
+- [`update_glossary()`](http://contributor.r-project.org/glossary/reference/update_glossary.md)
+  : Update a glossary entry
 
