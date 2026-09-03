@@ -14,13 +14,11 @@ weblate_url <- paste0(
   "r-project/glossary/en/?format=csv"
 )
 
-
 # ---------------------------------------------------------
 # Retrieval date
 # ---------------------------------------------------------
 
 retrieved_at <- Sys.Date()
-
 
 # ---------------------------------------------------------
 # rOpenSci glossary
@@ -35,7 +33,9 @@ ropensci <- readr::read_csv(
     source = "rOpenSci",
     source_url = ropensci_url,
     retrieved_at = retrieved_at,
-
+    added_via = "GitHub",
+    updated_via = "GitHub",
+    weblate = NA_character_,
     location = NA_character_,
     id = NA_character_,
     fuzzy = NA,
@@ -51,6 +51,9 @@ ropensci <- readr::read_csv(
     source,
     source_url,
     retrieved_at,
+    added_via,
+    updated_via,
+    weblate,
     location,
     id,
     fuzzy,
@@ -58,7 +61,6 @@ ropensci <- readr::read_csv(
     translator_comments,
     developer_comments
   )
-
 
 # ---------------------------------------------------------
 # Weblate glossary
@@ -82,7 +84,10 @@ weblate <- readr::read_csv(
 
     source = "Weblate",
     source_url = weblate_url,
-    retrieved_at = retrieved_at
+    retrieved_at = retrieved_at,
+    added_via = "Weblate",
+    updated_via = "Weblate",
+    weblate = "include"
   ) |>
   dplyr::select(
     english,
@@ -92,6 +97,9 @@ weblate <- readr::read_csv(
     source,
     source_url,
     retrieved_at,
+    added_via,
+    updated_via,
+    weblate,
     location,
     id,
     fuzzy,
@@ -117,6 +125,9 @@ combine <- dplyr::bind_rows(
         observation,
         source,
         source_url,
+        added_via,
+        updated_via,
+        weblate,
         location,
         id,
         context,
