@@ -64,6 +64,16 @@ updated_glossary <- update_glossary(
     updated_via = "GitHub",
     weblate = "include"
     )
+updated_glossary
+```
+
+``` R
+##      english        spanish synonym observation source source_url retrieved_at
+## 1 data frame marco de datos    <NA>        <NA>   User       <NA>   2026-09-03
+##   added_via updated_via weblate location   id fuzzy context translator_comments
+## 1    GitHub      GitHub include     <NA> <NA>    NA    <NA>                <NA>
+##   developer_comments
+## 1               <NA>
 ```
 
 ## Contributors
