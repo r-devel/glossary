@@ -3,3 +3,4 @@
 export(combine_glossaries)
 export(get_ropensci_glossary)
 export(get_weblate_glossary)
+export(update_glossary)

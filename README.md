@@ -61,7 +61,14 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(glossary)
-## basic example code
+current_glossary <- data.frame()
+updated_glossary <- update_glossary(
+    glossary = current_glossary,
+    english = "data frame",
+    spanish = "marco de datos",
+    updated_via = "GitHub",
+    weblate = "include"
+    )
 ```
 
 ## Contributors
